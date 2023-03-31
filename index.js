@@ -11,6 +11,10 @@ const app = express()
 mongoose.set('strictQuery', false)
 mongoose.connect(process.env.MONGO_URL, () => console.log('DB is successfully connected'))
 
+app.get('/',(req,res)=>{
+    console.log("welcome")
+})
+
 // routes & middlewares
 // those two middlewares make req.body accessible, otherwise it would be undefined!!!
 app.use(cors())
